@@ -11,7 +11,9 @@ export class ServersService {
     }
 
     getServer(id: number): Server {
-        return this.servers.find((server: Server) => server.id === id);
+        return this.servers.find((server: Server) => {
+            return server.id === id
+        });
     }
 
     updateServer(id: number, serverInfo: {name: string, status: string}) {
